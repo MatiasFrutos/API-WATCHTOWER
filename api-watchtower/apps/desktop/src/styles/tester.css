@@ -1,0 +1,51 @@
+.aw-tester {
+  display: grid;
+  gap: 14px;
+}
+
+.aw-request-bar {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr) 112px;
+  gap: 9px;
+  padding: 12px;
+  border: 1px solid var(--aw-border);
+  background: rgba(255, 255, 255, 0.78);
+  border-radius: var(--aw-radius-lg);
+  box-shadow: var(--aw-shadow-sm);
+}
+
+.aw-method-select {
+  font-weight: 850;
+}
+
+.aw-tester-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 14px;
+}
+
+.aw-tester-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.aw-field-spaced {
+  margin-top: 14px;
+}
+
+@media (max-width: 1060px) {
+  .aw-tester-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .aw-request-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .aw-request-bar .aw-primary-button {
+    width: 100%;
+  }
+}

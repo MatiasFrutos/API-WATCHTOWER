@@ -1,0 +1,286 @@
+.aw-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.aw-field {
+  display: grid;
+  gap: 7px;
+}
+
+.aw-field span {
+  color: var(--aw-muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.aw-field-spaced {
+  margin-top: 14px;
+}
+
+.aw-not-found {
+  min-height: 55vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.aw-not-found h2 {
+  font-size: 72px;
+  margin: 0;
+  letter-spacing: -0.08em;
+}
+
+.aw-not-found p {
+  color: var(--aw-muted);
+}
+
+.aw-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.aw-project-card,
+.aw-endpoint-card {
+  display: grid;
+  gap: 13px;
+}
+
+.aw-project-card:hover,
+.aw-endpoint-card:hover {
+  transform: translateY(-2px);
+}
+
+.aw-project-card-header,
+.aw-endpoint-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.aw-project-title,
+.aw-endpoint-title {
+  display: block;
+  margin-top: 5px;
+  font-size: 18px;
+  letter-spacing: -0.04em;
+  color: var(--aw-text);
+}
+
+.aw-project-description {
+  color: var(--aw-muted);
+  margin: 0;
+  line-height: 1.5;
+  font-size: 13px;
+}
+
+.aw-project-url {
+  border: 1px solid var(--aw-border);
+  background: var(--aw-surface-soft);
+  color: var(--aw-primary-strong);
+  padding: 9px 11px;
+  border-radius: 12px;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.aw-project-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.aw-project-form {
+  display: grid;
+  gap: 14px;
+}
+
+.aw-textarea-small {
+  min-height: 100px;
+}
+
+.aw-modal-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.aw-endpoint-method-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.aw-method-badge {
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  background: var(--aw-primary-soft);
+  color: var(--aw-primary-strong);
+  border-radius: 999px;
+  padding: 6px 9px;
+  font-size: 11px;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.aw-endpoint-last {
+  color: var(--aw-muted);
+  font-size: 12px;
+}
+
+.aw-history-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.aw-history-list {
+  display: grid;
+  gap: 10px;
+}
+
+.aw-history-item {
+  border: 1px solid var(--aw-border);
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 16px;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  transition:
+    transform var(--aw-transition),
+    box-shadow var(--aw-transition),
+    border-color var(--aw-transition);
+}
+
+.aw-history-item:hover {
+  transform: translateY(-1px);
+  border-color: var(--aw-border-strong);
+  box-shadow: var(--aw-shadow-sm);
+}
+
+.aw-history-main {
+  min-width: 0;
+  display: grid;
+  gap: 9px;
+}
+
+.aw-history-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.aw-history-url {
+  display: block;
+  color: var(--aw-text);
+  font-size: 14px;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.aw-history-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--aw-muted);
+  font-size: 12px;
+}
+
+.aw-history-buttons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.aw-history-detail {
+  display: grid;
+  gap: 13px;
+}
+
+.aw-history-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.aw-history-detail-grid > div {
+  border: 1px solid var(--aw-border);
+  background: var(--aw-surface-soft);
+  border-radius: 14px;
+  padding: 11px;
+  display: grid;
+  gap: 5px;
+}
+
+.aw-history-detail-grid strong {
+  color: var(--aw-text);
+  font-size: 13px;
+}
+
+.aw-response-time {
+  display: inline-flex;
+  align-items: center;
+  color: var(--aw-muted);
+  font-size: 12px;
+}
+
+@media (max-width: 1180px) {
+  .aw-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .aw-history-item {
+    grid-template-columns: 1fr;
+  }
+
+  .aw-history-buttons {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .aw-history-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .aw-form-grid,
+  .aw-grid-3,
+  .aw-history-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aw-history-url {
+    white-space: normal;
+  }
+
+  .aw-project-actions,
+  .aw-endpoint-method-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .aw-project-actions .aw-primary-button,
+  .aw-project-actions .aw-icon-button {
+    width: 100%;
+  }
+
+  .aw-modal-footer-actions {
+    flex-direction: column-reverse;
+  }
+
+  .aw-modal-footer-actions .aw-primary-button,
+  .aw-modal-footer-actions .aw-icon-button {
+    width: 100%;
+  }
+}

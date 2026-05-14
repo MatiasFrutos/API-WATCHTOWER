@@ -1,0 +1,14 @@
+{
+  "name": "@api-watchtower/shared",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shared constants and validators for API Watchtower.",
+  "type": "module",
+  "main": "src/constants.js",
+  "exports": {
+    "./constants": "./src/constants.js",
+    "./http-methods": "./src/http-methods.js",
+    "./status-codes": "./src/status-codes.js",
+    "./validators": "./src/validators.js"
+  }
+}

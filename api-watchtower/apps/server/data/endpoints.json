@@ -1,0 +1,32 @@
+[
+  {
+    "id": "endpoint_mp5qg9dk_x20nr10e",
+    "projectId": null,
+    "name": "prueba",
+    "method": "GET",
+    "url": "https://jsonplaceholder.typicode.com/posts/1",
+    "headers": {},
+    "body": "",
+    "status": "ok",
+    "lastStatusCode": 200,
+    "lastResponseTimeMs": 268,
+    "lastCheckedAt": "2026-05-14T16:58:55.234Z",
+    "createdAt": "2026-05-14T16:58:48.056Z",
+    "updatedAt": "2026-05-14T16:58:55.234Z"
+  },
+  {
+    "id": "endpoint_mp5qcstv_964bpvra",
+    "projectId": null,
+    "name": "sasfda",
+    "method": "GET",
+    "url": "https://jsonplaceholder.typicode.com/posts/1",
+    "headers": {},
+    "body": "",
+    "status": "idle",
+    "lastStatusCode": null,
+    "lastResponseTimeMs": null,
+    "lastCheckedAt": null,
+    "createdAt": "2026-05-14T16:56:06.643Z",
+    "updatedAt": "2026-05-14T16:56:06.643Z"
+  }
+]

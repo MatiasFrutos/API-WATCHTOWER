@@ -1,0 +1,65 @@
+{
+  "name": "api-watchtower",
+  "version": "0.1.0",
+  "private": true,
+  "description": "API Watchtower - Local first API testing and monitoring desktop app.",
+  "author": "ZERNYX",
+  "license": "MIT",
+  "workspaces": [
+    "apps/desktop",
+    "apps/server",
+    "packages/shared"
+  ],
+  "main": "apps/desktop/electron/main.cjs",
+  "scripts": {
+    "dev": "concurrently -k -n SERVER,DESKTOP,ELECTRON -c green,cyan,magenta \"npm run dev --workspace apps/server\" \"npm run dev --workspace apps/desktop\" \"wait-on http://127.0.0.1:5173 http://127.0.0.1:3567/api/health && cross-env NODE_ENV=development electron apps/desktop/electron/main.cjs\"",
+    "dev:server": "npm run dev --workspace apps/server",
+    "dev:desktop": "npm run dev --workspace apps/desktop",
+    "start:server": "npm run start --workspace apps/server",
+    "build": "npm run build --workspace apps/desktop",
+    "dist": "npm run build && electron-builder --win nsis",
+    "dist:portable": "npm run build && electron-builder --win portable",
+    "clean": "node -e \"const fs=require('fs'); ['release','apps/desktop/dist'].forEach(p=>fs.rmSync(p,{recursive:true,force:true}))\""
+  },
+  "build": {
+    "appId": "com.zernyx.apiwatchtower",
+    "productName": "API Watchtower",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "apps/desktop/dist/**/*",
+      "apps/desktop/electron/**/*",
+      "apps/desktop/assets/**/*",
+      "apps/server/**/*",
+      "packages/shared/**/*",
+      "package.json"
+    ],
+    "extraMetadata": {
+      "main": "apps/desktop/electron/main.cjs"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "apps/desktop/assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "API Watchtower",
+      "deleteAppDataOnUninstall": false
+    }
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^35.1.5",
+    "electron-builder": "^26.0.12",
+    "wait-on": "^8.0.3"
+  }
+}
