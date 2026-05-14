@@ -1009,7 +1009,7 @@ MIT License
 
 ## 👨‍💻 Author
 
-Developed as a local-first developer utility project.
+Developed by **Matias Isaac Frutos González**.
 
 ```txt
 API Watchtower
