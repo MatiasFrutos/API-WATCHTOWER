@@ -21,20 +21,18 @@
 
 ## ✨ Overview
 
-API Watchtower is a local-first desktop application created for developers who need a simple, fast and clean tool to test APIs.
+**API Watchtower** is a local-first desktop application created for developers who need a simple, fast and clean tool to test APIs.
 
 It works as a lightweight alternative to large API platforms, focused on the essential workflow:
 
-✅ Create API projects  
-✅ Register endpoints  
-✅ Execute real HTTP requests  
-✅ Measure response time  
-✅ Save local history  
-✅ Review API health  
-✅ Generate basic reports  
-✅ Keep all data local  
-
-The goal is simple:
+- ✅ Create API projects
+- ✅ Register endpoints
+- ✅ Execute real HTTP requests
+- ✅ Measure response time
+- ✅ Save local history
+- ✅ Review API health
+- ✅ Generate basic reports
+- ✅ Keep all data local
 
 > A clean control tower for your APIs.
 
@@ -48,7 +46,9 @@ Large tools are powerful, but sometimes they add too much friction for small pro
 
 API Watchtower focuses on a direct workflow:
 
+```txt
 Open app → Create project → Add endpoint → Send request → Review response → Check history
+```
 
 No cloud account.  
 No heavy setup.  
@@ -62,8 +62,6 @@ Just a clean local workflow.
 ### 📁 Projects
 
 Create and organize API projects locally.
-
-Features:
 
 - Create API projects
 - Store project name
@@ -79,8 +77,6 @@ Features:
 
 Register endpoints for each project.
 
-Features:
-
 - Add endpoint name
 - Select HTTP method
 - Save endpoint URL
@@ -93,21 +89,21 @@ Features:
 
 Supported methods:
 
-- GET
-- POST
-- PUT
-- PATCH
-- DELETE
-- HEAD
-- OPTIONS
+```txt
+GET
+POST
+PUT
+PATCH
+DELETE
+HEAD
+OPTIONS
+```
 
 ---
 
 ### 🧪 Tester
 
 Execute real HTTP requests from the desktop interface.
-
-Features:
 
 - Send real API requests
 - View HTTP status
@@ -120,15 +116,15 @@ Features:
 
 Example public API for testing:
 
+```txt
 https://jsonplaceholder.typicode.com/posts/1
+```
 
 ---
 
 ### 🕘 History
 
 Review all executed requests.
-
-Features:
 
 - View request method
 - View request URL
@@ -142,15 +138,15 @@ Features:
 
 Local history file:
 
+```txt
 apps/server/data/history.json
+```
 
 ---
 
 ### 📊 Dashboard
 
 Visual summary of API activity.
-
-Features:
 
 - Total projects
 - Total endpoints
@@ -165,8 +161,6 @@ Features:
 ### 📈 Reports
 
 Local reports based on request history.
-
-Features:
 
 - Availability percentage
 - Total executed requests
@@ -196,63 +190,63 @@ The interface was designed to be:
 
 ## 🏗️ Architecture
 
-API Watchtower architecture:
-
-    ┌──────────────────────────────────────────────┐
-    │              Electron Desktop App             │
-    │                                              │
-    │  ┌────────────────────────────────────────┐  │
-    │  │          Vanilla JS Frontend            │  │
-    │  │                                        │  │
-    │  │  Dashboard                             │  │
-    │  │  Projects                              │  │
-    │  │  Endpoints                             │  │
-    │  │  Tester                                │  │
-    │  │  History                               │  │
-    │  │  Reports                               │  │
-    │  │  Settings                              │  │
-    │  └────────────────────────────────────────┘  │
-    │                    │                         │
-    │                    ▼                         │
-    │  ┌────────────────────────────────────────┐  │
-    │  │       Local Express Backend API         │  │
-    │  │                                        │  │
-    │  │  /api/health                           │  │
-    │  │  /api/projects                         │  │
-    │  │  /api/endpoints                        │  │
-    │  │  /api/requests/send                    │  │
-    │  │  /api/history                          │  │
-    │  │  /api/reports/summary                  │  │
-    │  │  /api/settings                         │  │
-    │  └────────────────────────────────────────┘  │
-    │                    │                         │
-    │                    ▼                         │
-    │  ┌────────────────────────────────────────┐  │
-    │  │            Local JSON Storage           │  │
-    │  │                                        │  │
-    │  │  projects.json                         │  │
-    │  │  endpoints.json                        │  │
-    │  │  history.json                          │  │
-    │  │  settings.json                         │  │
-    │  └────────────────────────────────────────┘  │
-    └──────────────────────────────────────────────┘
+```txt
+┌──────────────────────────────────────────────┐
+│              Electron Desktop App             │
+│                                              │
+│  ┌────────────────────────────────────────┐  │
+│  │          Vanilla JS Frontend            │  │
+│  │                                        │  │
+│  │  Dashboard                             │  │
+│  │  Projects                              │  │
+│  │  Endpoints                             │  │
+│  │  Tester                                │  │
+│  │  History                               │  │
+│  │  Reports                               │  │
+│  │  Settings                              │  │
+│  └────────────────────────────────────────┘  │
+│                    │                         │
+│                    ▼                         │
+│  ┌────────────────────────────────────────┐  │
+│  │       Local Express Backend API         │  │
+│  │                                        │  │
+│  │  /api/health                           │  │
+│  │  /api/projects                         │  │
+│  │  /api/endpoints                        │  │
+│  │  /api/requests/send                    │  │
+│  │  /api/history                          │  │
+│  │  /api/reports/summary                  │  │
+│  │  /api/settings                         │  │
+│  └────────────────────────────────────────┘  │
+│                    │                         │
+│                    ▼                         │
+│  ┌────────────────────────────────────────┐  │
+│  │            Local JSON Storage           │  │
+│  │                                        │  │
+│  │  projects.json                         │  │
+│  │  endpoints.json                        │  │
+│  │  history.json                          │  │
+│  │  settings.json                         │  │
+│  └────────────────────────────────────────┘  │
+└──────────────────────────────────────────────┘
+```
 
 ---
 
 ## 🧰 Tech Stack
 
-Desktop:
+### Desktop
 
 - Electron
 
-Frontend:
+### Frontend
 
 - Vanilla JavaScript
 - HTML
 - CSS
 - Vite
 
-Backend:
+### Backend
 
 - Node.js
 - Express
@@ -261,11 +255,11 @@ Backend:
 - Morgan
 - Dotenv
 
-Storage:
+### Storage
 
 - Local JSON files
 
-Packaging:
+### Packaging
 
 - Electron Builder
 - NSIS Windows installer
@@ -274,178 +268,170 @@ Packaging:
 
 ## 📂 Project Structure
 
+```txt
 api-watchtower/
-│
 ├── apps/
-│   │
 │   ├── desktop/
+│   │   ├── assets/
+│   │   │   ├── icon.ico
+│   │   │   └── logo.png
 │   │   ├── electron/
+│   │   │   ├── ipc-handlers.cjs
 │   │   │   ├── main.cjs
 │   │   │   ├── preload.cjs
-│   │   │   ├── window-manager.cjs
 │   │   │   ├── server-manager.cjs
-│   │   │   └── ipc-handlers.cjs
-│   │   │
+│   │   │   └── window-manager.cjs
+│   │   ├── public/
 │   │   ├── src/
-│   │   │   ├── app.js
-│   │   │   ├── main.js
-│   │   │   │
+│   │   │   ├── components/
+│   │   │   │   ├── code-viewer.js
+│   │   │   │   ├── empty-state.js
+│   │   │   │   ├── footer.js
+│   │   │   │   ├── loader.js
+│   │   │   │   ├── modal.js
+│   │   │   │   ├── navbar.js
+│   │   │   │   ├── sidebar.js
+│   │   │   │   ├── status-badge.js
+│   │   │   │   └── toast.js
 │   │   │   ├── core/
 │   │   │   │   ├── api.client.js
 │   │   │   │   ├── config.js
 │   │   │   │   ├── events.js
 │   │   │   │   ├── router.js
 │   │   │   │   └── storage.js
-│   │   │   │
-│   │   │   ├── components/
-│   │   │   │   ├── navbar.js
-│   │   │   │   ├── sidebar.js
-│   │   │   │   ├── footer.js
-│   │   │   │   ├── modal.js
-│   │   │   │   ├── toast.js
-│   │   │   │   ├── loader.js
-│   │   │   │   ├── empty-state.js
-│   │   │   │   ├── status-badge.js
-│   │   │   │   └── code-viewer.js
-│   │   │   │
 │   │   │   ├── pages/
 │   │   │   │   ├── dashboard.page.js
-│   │   │   │   ├── projects.page.js
 │   │   │   │   ├── endpoints.page.js
-│   │   │   │   ├── tester.page.js
 │   │   │   │   ├── history.page.js
+│   │   │   │   ├── not-found.page.js
+│   │   │   │   ├── projects.page.js
 │   │   │   │   ├── reports.page.js
 │   │   │   │   ├── settings.page.js
-│   │   │   │   └── not-found.page.js
-│   │   │   │
+│   │   │   │   └── tester.page.js
 │   │   │   ├── services/
-│   │   │   │   ├── projects.service.js
 │   │   │   │   ├── endpoints.service.js
-│   │   │   │   ├── requests.service.js
 │   │   │   │   ├── history.service.js
+│   │   │   │   ├── projects.service.js
 │   │   │   │   ├── reports.service.js
+│   │   │   │   ├── requests.service.js
 │   │   │   │   └── settings.service.js
-│   │   │   │
+│   │   │   ├── styles/
+│   │   │   │   ├── base.css
+│   │   │   │   ├── components.css
+│   │   │   │   ├── dashboard.css
+│   │   │   │   ├── layout.css
+│   │   │   │   ├── pages.css
+│   │   │   │   ├── settings.css
+│   │   │   │   └── tester.css
 │   │   │   ├── utils/
 │   │   │   │   ├── date.util.js
 │   │   │   │   ├── format.util.js
 │   │   │   │   ├── http-status.util.js
 │   │   │   │   ├── json.util.js
 │   │   │   │   └── validators.util.js
-│   │   │   │
-│   │   │   └── styles/
-│   │   │       ├── base.css
-│   │   │       ├── layout.css
-│   │   │       ├── components.css
-│   │   │       ├── pages.css
-│   │   │       ├── dashboard.css
-│   │   │       ├── tester.css
-│   │   │       └── settings.css
-│   │   │
+│   │   │   ├── app.js
+│   │   │   └── main.js
 │   │   ├── index.html
 │   │   ├── package.json
 │   │   └── vite.config.js
-│   │
 │   └── server/
+│       ├── data/
+│       │   ├── endpoints.json
+│       │   ├── history.json
+│       │   ├── projects.json
+│       │   └── settings.json
+│       ├── logs/
+│       │   └── app.log
 │       ├── src/
-│       │   ├── app.js
-│       │   ├── server.js
-│       │   │
 │       │   ├── config/
 │       │   │   ├── cors.js
 │       │   │   └── env.js
-│       │   │
 │       │   ├── controllers/
-│       │   │   ├── health.controller.js
-│       │   │   ├── projects.controller.js
 │       │   │   ├── endpoints.controller.js
-│       │   │   ├── requests.controller.js
+│       │   │   ├── health.controller.js
 │       │   │   ├── history.controller.js
+│       │   │   ├── projects.controller.js
 │       │   │   ├── reports.controller.js
+│       │   │   ├── requests.controller.js
 │       │   │   └── settings.controller.js
-│       │   │
-│       │   ├── routes/
-│       │   │   ├── index.routes.js
-│       │   │   ├── health.routes.js
-│       │   │   ├── projects.routes.js
-│       │   │   ├── endpoints.routes.js
-│       │   │   ├── requests.routes.js
-│       │   │   ├── history.routes.js
-│       │   │   ├── reports.routes.js
-│       │   │   └── settings.routes.js
-│       │   │
-│       │   ├── services/
-│       │   │   ├── projects.service.js
-│       │   │   ├── endpoints.service.js
-│       │   │   ├── requests.service.js
-│       │   │   ├── history.service.js
-│       │   │   ├── reports.service.js
-│       │   │   ├── settings.service.js
-│       │   │   └── watchtower.service.js
-│       │   │
-│       │   ├── storage/
-│       │   │   ├── db.js
-│       │   │   ├── json-db.js
-│       │   │   └── seed.js
-│       │   │
 │       │   ├── middlewares/
 │       │   │   ├── error.middleware.js
 │       │   │   ├── not-found.middleware.js
 │       │   │   └── request-logger.middleware.js
-│       │   │
-│       │   └── utils/
-│       │       ├── file-system.js
-│       │       ├── http-client.js
-│       │       ├── id.js
-│       │       ├── response-time.js
-│       │       ├── safe-json.js
-│       │       └── status-classifier.js
-│       │
-│       ├── data/
-│       │   ├── projects.json
-│       │   ├── endpoints.json
-│       │   ├── history.json
-│       │   └── settings.json
-│       │
-│       ├── logs/
+│       │   ├── routes/
+│       │   │   ├── endpoints.routes.js
+│       │   │   ├── health.routes.js
+│       │   │   ├── history.routes.js
+│       │   │   ├── index.routes.js
+│       │   │   ├── projects.routes.js
+│       │   │   ├── reports.routes.js
+│       │   │   ├── requests.routes.js
+│       │   │   └── settings.routes.js
+│       │   ├── services/
+│       │   │   ├── endpoints.service.js
+│       │   │   ├── history.service.js
+│       │   │   ├── projects.service.js
+│       │   │   ├── reports.service.js
+│       │   │   ├── requests.service.js
+│       │   │   ├── settings.service.js
+│       │   │   └── watchtower.service.js
+│       │   ├── storage/
+│       │   │   ├── db.js
+│       │   │   ├── json-db.js
+│       │   │   └── seed.js
+│       │   ├── utils/
+│       │   │   ├── file-system.js
+│       │   │   ├── http-client.js
+│       │   │   ├── id.js
+│       │   │   ├── response-time.js
+│       │   │   ├── safe-json.js
+│       │   │   └── status-classifier.js
+│       │   ├── app.js
+│       │   └── server.js
 │       ├── .env
 │       └── package.json
-│
-├── packages/
-│   └── shared/
-│
-├── scripts/
-│   ├── dev.bat
-│   ├── build.bat
-│   ├── dist.bat
-│   ├── clean.bat
-│   └── reset-data.bat
-│
 ├── docs/
 │   ├── architecture.md
 │   ├── desktop-build.md
 │   ├── installation.md
 │   ├── mvp.md
 │   └── roadmap.md
-│
-├── package.json
+├── packages/
+│   └── shared/
+│       ├── src/
+│       │   ├── constants.js
+│       │   ├── http-methods.js
+│       │   ├── status-codes.js
+│       │   └── validators.js
+│       └── package.json
+├── release/
+├── scripts/
+│   ├── build.bat
+│   ├── clean.bat
+│   ├── dev.bat
+│   ├── dist.bat
+│   └── reset-data.bat
 ├── .env.example
 ├── .gitignore
+├── package.json
 └── README.md
+```
 
 ---
 
 ## ⚙️ Installation
 
-Requirements:
+### Requirements
 
 - Node.js 20+
 - npm 10+
 - Windows 10/11
 
-Install dependencies:
+### Install dependencies
 
-    npm install
+```bash
+npm install
+```
 
 ---
 
@@ -453,13 +439,17 @@ Install dependencies:
 
 From the project root:
 
-    npm run dev
+```bash
+npm run dev
+```
 
 This starts:
 
-    SERVER   → http://127.0.0.1:3567
-    DESKTOP  → http://127.0.0.1:5173
-    ELECTRON → API Watchtower desktop window
+```txt
+SERVER   → http://127.0.0.1:3567
+DESKTOP  → http://127.0.0.1:5173
+ELECTRON → API Watchtower desktop window
+```
 
 ---
 
@@ -467,16 +457,20 @@ This starts:
 
 Open in the browser:
 
-    http://127.0.0.1:3567/api/health
+```txt
+http://127.0.0.1:3567/api/health
+```
 
 Expected response:
 
-    {
-      "ok": true,
-      "message": "API Watchtower API online",
-      "app": "API Watchtower",
-      "status": "online"
-    }
+```json
+{
+  "ok": true,
+  "message": "API Watchtower API online",
+  "app": "API Watchtower",
+  "status": "online"
+}
+```
 
 ---
 
@@ -484,7 +478,9 @@ Expected response:
 
 Use this public API:
 
-    https://jsonplaceholder.typicode.com/posts/1
+```txt
+https://jsonplaceholder.typicode.com/posts/1
+```
 
 Workflow:
 
@@ -505,107 +501,129 @@ Workflow:
 
 ### Health
 
-    GET /api/health
+```txt
+GET /api/health
+```
 
 ---
 
 ### Projects
 
-    GET    /api/projects
-    GET    /api/projects/:id
-    POST   /api/projects
-    PUT    /api/projects/:id
-    DELETE /api/projects/:id
+```txt
+GET    /api/projects
+GET    /api/projects/:id
+POST   /api/projects
+PUT    /api/projects/:id
+DELETE /api/projects/:id
+```
 
 Example payload:
 
-    {
-      "name": "CRM API",
-      "baseUrl": "https://api.example.com",
-      "description": "Main CRM backend API"
-    }
+```json
+{
+  "name": "CRM API",
+  "baseUrl": "https://api.example.com",
+  "description": "Main CRM backend API"
+}
+```
 
 ---
 
 ### Endpoints
 
-    GET    /api/endpoints
-    GET    /api/endpoints?projectId=PROJECT_ID
-    GET    /api/endpoints/:id
-    POST   /api/endpoints
-    PUT    /api/endpoints/:id
-    DELETE /api/endpoints/:id
+```txt
+GET    /api/endpoints
+GET    /api/endpoints?projectId=PROJECT_ID
+GET    /api/endpoints/:id
+POST   /api/endpoints
+PUT    /api/endpoints/:id
+DELETE /api/endpoints/:id
+```
 
 Example payload:
 
-    {
-      "projectId": "project_xxxxx",
-      "name": "Get users",
-      "method": "GET",
-      "url": "https://jsonplaceholder.typicode.com/users",
-      "headers": {},
-      "body": ""
-    }
+```json
+{
+  "projectId": "project_xxxxx",
+  "name": "Get users",
+  "method": "GET",
+  "url": "https://jsonplaceholder.typicode.com/users",
+  "headers": {},
+  "body": ""
+}
+```
 
 ---
 
 ### Requests
 
-    POST /api/requests/send
+```txt
+POST /api/requests/send
+```
 
 Example payload:
 
-    {
-      "endpointId": "endpoint_xxxxx",
-      "projectId": "project_xxxxx",
-      "method": "GET",
-      "url": "https://jsonplaceholder.typicode.com/posts/1",
-      "headers": {},
-      "body": "",
-      "timeout": 30000
-    }
+```json
+{
+  "endpointId": "endpoint_xxxxx",
+  "projectId": "project_xxxxx",
+  "method": "GET",
+  "url": "https://jsonplaceholder.typicode.com/posts/1",
+  "headers": {},
+  "body": "",
+  "timeout": 30000
+}
+```
 
 Example response:
 
-    {
-      "ok": true,
-      "data": {
-        "ok": true,
-        "status": 200,
-        "statusText": "OK",
-        "kind": "ok",
-        "responseTimeMs": 268,
-        "headers": {},
-        "body": {
-          "userId": 1,
-          "id": 1,
-          "title": "Example title",
-          "body": "Example body"
-        },
-        "error": null,
-        "historyId": "history_xxxxx"
-      }
-    }
+```json
+{
+  "ok": true,
+  "data": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "kind": "ok",
+    "responseTimeMs": 268,
+    "headers": {},
+    "body": {
+      "userId": 1,
+      "id": 1,
+      "title": "Example title",
+      "body": "Example body"
+    },
+    "error": null,
+    "historyId": "history_xxxxx"
+  }
+}
+```
 
 ---
 
 ### History
 
-    GET    /api/history
-    DELETE /api/history
+```txt
+GET    /api/history
+DELETE /api/history
+```
 
 ---
 
 ### Reports
 
-    GET /api/reports/summary
+```txt
+GET /api/reports/summary
+```
 
 ---
 
 ### Settings
 
-    GET /api/settings
-    PUT /api/settings
+```txt
+GET /api/settings
+PUT /api/settings
+```
 
 ---
 
@@ -613,10 +631,12 @@ Example response:
 
 API Watchtower currently uses local JSON files.
 
-    apps/server/data/projects.json
-    apps/server/data/endpoints.json
-    apps/server/data/history.json
-    apps/server/data/settings.json
+```txt
+apps/server/data/projects.json
+apps/server/data/endpoints.json
+apps/server/data/history.json
+apps/server/data/settings.json
+```
 
 This keeps the MVP simple, transparent and easy to debug.
 
@@ -628,22 +648,30 @@ Future versions may replace this layer with SQLite.
 
 API Watchtower uses Electron Builder.
 
-Build frontend:
+### Build frontend
 
-    npm run build
+```bash
+npm run build
+```
 
-Generate Windows installer:
+### Generate Windows installer
 
-    npm run dist
+```bash
+npm run dist
+```
 
 Output:
 
-    release/
-    └── API Watchtower Setup 0.1.0.exe
+```txt
+release/
+└── API Watchtower Setup 0.1.0.exe
+```
 
-Generate portable executable:
+### Generate portable executable
 
-    npm run dist:portable
+```bash
+npm run dist:portable
+```
 
 ---
 
@@ -651,23 +679,33 @@ Generate portable executable:
 
 Start local server, Vite frontend and Electron app:
 
-    npm run dev
+```bash
+npm run dev
+```
 
 Build desktop frontend:
 
-    npm run build
+```bash
+npm run build
+```
 
 Generate Windows installer:
 
-    npm run dist
+```bash
+npm run dist
+```
 
 Generate portable EXE:
 
-    npm run dist:portable
+```bash
+npm run dist:portable
+```
 
 Remove generated builds:
 
-    npm run clean
+```bash
+npm run clean
+```
 
 ---
 
@@ -675,11 +713,13 @@ Remove generated builds:
 
 The project also includes Windows helper scripts:
 
-    scripts/dev.bat
-    scripts/build.bat
-    scripts/dist.bat
-    scripts/clean.bat
-    scripts/reset-data.bat
+```txt
+scripts/dev.bat
+scripts/build.bat
+scripts/dist.bat
+scripts/clean.bat
+scripts/reset-data.bat
+```
 
 Use them if you prefer double-click workflows on Windows.
 
@@ -687,20 +727,20 @@ Use them if you prefer double-click workflows on Windows.
 
 ## 🎯 MVP Status
 
-✅ Electron desktop shell  
-✅ Local Express backend  
-✅ Vanilla JavaScript frontend  
-✅ Project creation  
-✅ Endpoint creation  
-✅ Real request execution  
-✅ Local request history  
-✅ Request repeat  
-✅ Response copy  
-✅ Dashboard summary  
-✅ Reports section  
-✅ Local JSON persistence  
-✅ Responsive light UI  
-✅ Windows installer config  
+- ✅ Electron desktop shell
+- ✅ Local Express backend
+- ✅ Vanilla JavaScript frontend
+- ✅ Project creation
+- ✅ Endpoint creation
+- ✅ Real request execution
+- ✅ Local request history
+- ✅ Request repeat
+- ✅ Response copy
+- ✅ Dashboard summary
+- ✅ Reports section
+- ✅ Local JSON persistence
+- ✅ Responsive light UI
+- ✅ Windows installer config
 
 ---
 
@@ -720,70 +760,70 @@ Use them if you prefer double-click workflows on Windows.
 
 ### Phase 1 — MVP Foundation
 
-✅ Desktop shell  
-✅ Local backend  
-✅ Local JSON storage  
-✅ Request tester  
-✅ History  
-✅ Dashboard  
-✅ Reports  
+- ✅ Desktop shell
+- ✅ Local backend
+- ✅ Local JSON storage
+- ✅ Request tester
+- ✅ History
+- ✅ Dashboard
+- ✅ Reports
 
 ---
 
 ### Phase 2 — Better API Workspace
 
-⬜ Collections  
-⬜ Environments  
-⬜ Environment variables  
-⬜ Headers presets  
-⬜ Query params editor  
-⬜ Auth helpers  
-⬜ Import/export workspace  
+- ⬜ Collections
+- ⬜ Environments
+- ⬜ Environment variables
+- ⬜ Headers presets
+- ⬜ Query params editor
+- ⬜ Auth helpers
+- ⬜ Import/export workspace
 
 ---
 
 ### Phase 3 — Monitoring
 
-⬜ Scheduled endpoint checks  
-⬜ Health timeline  
-⬜ Downtime detection  
-⬜ Slow endpoint alerts  
-⬜ Endpoint availability score  
-⬜ Background monitoring  
+- ⬜ Scheduled endpoint checks
+- ⬜ Health timeline
+- ⬜ Downtime detection
+- ⬜ Slow endpoint alerts
+- ⬜ Endpoint availability score
+- ⬜ Background monitoring
 
 ---
 
 ### Phase 4 — Reports
 
-⬜ Export report as JSON  
-⬜ Export report as PDF  
-⬜ Response time charts  
-⬜ Endpoint comparison  
-⬜ Error frequency report  
-⬜ Daily/weekly summaries  
+- ⬜ Export report as JSON
+- ⬜ Export report as PDF
+- ⬜ Response time charts
+- ⬜ Endpoint comparison
+- ⬜ Error frequency report
+- ⬜ Daily/weekly summaries
 
 ---
 
 ### Phase 5 — Professional Desktop App
 
-⬜ SQLite storage  
-⬜ AppData persistence  
-⬜ Auto updates  
-⬜ Signed installer  
-⬜ Custom app icon  
-⬜ Portable mode  
-⬜ Backup and restore  
+- ⬜ SQLite storage
+- ⬜ AppData persistence
+- ⬜ Auto updates
+- ⬜ Signed installer
+- ⬜ Custom app icon
+- ⬜ Portable mode
+- ⬜ Backup and restore
 
 ---
 
 ### Phase 6 — AI Assistant
 
-⬜ Explain API errors  
-⬜ Suggest fixes  
-⬜ Analyze failed responses  
-⬜ Generate request payloads  
-⬜ Generate documentation  
-⬜ Local Ollama support  
+- ⬜ Explain API errors
+- ⬜ Suggest fixes
+- ⬜ Analyze failed responses
+- ⬜ Generate request payloads
+- ⬜ Generate documentation
+- ⬜ Local Ollama support
 
 ---
 
@@ -808,12 +848,12 @@ A developer is building a local CRM API.
 
 Instead of manually checking endpoints in the browser or using a heavy API client, they can:
 
-1. Create "CRM API" project
+1. Create `"CRM API"` project
 2. Add endpoints:
-   - GET /clients
-   - POST /clients
-   - GET /orders
-   - POST /orders
+   - `GET /clients`
+   - `POST /clients`
+   - `GET /orders`
+   - `POST /orders`
 3. Execute real requests
 4. Review response status
 5. Check response time
@@ -848,18 +888,22 @@ API Watchtower is designed to run locally.
 
 ## 📦 Packaging Strategy
 
-Development:
+### Development
 
-    Electron loads Vite frontend
-    Express runs locally
-    JSON files store data
+```txt
+Electron loads Vite frontend
+Express runs locally
+JSON files store data
+```
 
-Production:
+### Production
 
-    Electron loads built frontend
-    Local server runs internally
-    Data remains local
-    Installer generated with Electron Builder
+```txt
+Electron loads built frontend
+Local server runs internally
+Data remains local
+Installer generated with Electron Builder
+```
 
 ---
 
@@ -881,15 +925,17 @@ This makes the app easier to scale without turning the MVP into a corporate octo
 
 ### npm install fails with EJSONPARSE
 
-Check that every package.json has valid JSON.
+Check that every `package.json` has valid JSON.
 
 PowerShell:
 
-    Get-ChildItem -Recurse -Filter package.json | ForEach-Object {
-      if ((Get-Content $_.FullName -Raw).Trim().Length -eq 0) {
-        Write-Host "EMPTY:" $_.FullName
-      }
-    }
+```powershell
+Get-ChildItem -Recurse -Filter package.json | ForEach-Object {
+  if ((Get-Content $_.FullName -Raw).Trim().Length -eq 0) {
+    Write-Host "EMPTY:" $_.FullName
+  }
+}
+```
 
 ---
 
@@ -897,13 +943,17 @@ PowerShell:
 
 Run:
 
-    npm install
+```bash
+npm install
+```
 
 If needed:
 
-    Remove-Item -Recurse -Force node_modules -ErrorAction SilentlyContinue
-    Remove-Item -Force package-lock.json -ErrorAction SilentlyContinue
-    npm install
+```powershell
+Remove-Item -Recurse -Force node_modules -ErrorAction SilentlyContinue
+Remove-Item -Force package-lock.json -ErrorAction SilentlyContinue
+npm install
+```
 
 ---
 
@@ -911,11 +961,15 @@ If needed:
 
 Check:
 
-    http://127.0.0.1:3567/api/health
+```txt
+http://127.0.0.1:3567/api/health
+```
 
 If it fails, run:
 
-    npm run dev --workspace apps/server
+```bash
+npm run dev --workspace apps/server
+```
 
 ---
 
@@ -923,11 +977,15 @@ If it fails, run:
 
 Check:
 
-    http://127.0.0.1:5173
+```txt
+http://127.0.0.1:5173
+```
 
 If it fails, run:
 
-    npm run dev --workspace apps/desktop
+```bash
+npm run dev --workspace apps/desktop
+```
 
 ---
 
@@ -935,9 +993,11 @@ If it fails, run:
 
 Check local JSON files:
 
-    apps/server/data/projects.json
-    apps/server/data/endpoints.json
-    apps/server/data/history.json
+```txt
+apps/server/data/projects.json
+apps/server/data/endpoints.json
+apps/server/data/history.json
+```
 
 ---
 
@@ -951,8 +1011,10 @@ MIT License
 
 Developed as a local-first developer utility project.
 
-    API Watchtower
-    A clean desktop control tower for APIs.
+```txt
+API Watchtower
+A clean desktop control tower for APIs.
+```
 
 ---
 
